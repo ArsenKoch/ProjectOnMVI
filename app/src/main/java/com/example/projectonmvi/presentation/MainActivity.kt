@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener {
             val text = dataEditView.text.toString()
-            vm.save(text)
+            vm.send(SaveEvent(text))
         }
 
         receiveButton.setOnClickListener {
-            vm.load()
+            vm.send(LoadEvent())
         }
     }
 }
