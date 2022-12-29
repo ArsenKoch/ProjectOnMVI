@@ -26,6 +26,18 @@ class MainViewModel(
         super.onCleared()
     }
 
+    fun send(event: MainEvent) {
+        when (event) {
+            is LoadEvent -> {
+                load()
+            }
+
+            is SaveEvent -> {
+                save(text = event.text)
+            }
+        }
+    }
+
     private fun save(text: String) {
         val param = SaveUserNameParam(text)
         val resultData: Boolean = saveUserNameUseCase.execute(param)
