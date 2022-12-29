@@ -26,13 +26,13 @@ class MainViewModel(
         super.onCleared()
     }
 
-    fun save(text: String) {
+    private fun save(text: String) {
         val param = SaveUserNameParam(text)
         val resultData: Boolean = saveUserNameUseCase.execute(param)
         resultLiveMutable.value = "Save result = $resultData"
     }
 
-    fun load() {
+    private fun load() {
         val userName: UserName = getUserNameUseCase.execute()
         resultLiveMutable.value = "${userName.firstName} ${userName.lastName}"
     }
