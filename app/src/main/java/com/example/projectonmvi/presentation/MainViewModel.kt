@@ -14,11 +14,12 @@ class MainViewModel(
     private val saveUserNameUseCase: SaveUserNameUseCase
 ) : ViewModel() {
 
-    private val resultLiveMutable = MutableLiveData<String>()
-    val resultLive: LiveData<String> = resultLiveMutable
+    private val stateLiveMutable = MutableLiveData<MainState>()
+    val stateLive: LiveData<MainState> = stateLiveMutable
 
     init {
         Log.e("AAA", "VM created")
+        stateLiveMutable.value = MainState(false,"","")
     }
 
     override fun onCleared() {
@@ -41,11 +42,19 @@ class MainViewModel(
     private fun save(text: String) {
         val param = SaveUserNameParam(text)
         val resultData: Boolean = saveUserNameUseCase.execute(param)
-        resultLiveMutable.value = "Save result = $resultData"
+        stateLiveMutable.value = MainState(
+            result = resultData,
+            lastName = stateLiveMutable.value!!.lastName,
+            firstName = stateLiveMutable.value!!.firstName
+        )
     }
 
     private fun load() {
         val userName: UserName = getUserNameUseCase.execute()
-        resultLiveMutable.value = "${userName.firstName} ${userName.lastName}"
+        stateLiveMutable.value = MainState(
+            result = stateLiveMutable.value!!.result,
+            lastName = userName.lastName,
+            firstName = userName.firstName,
+        )
     }
 }

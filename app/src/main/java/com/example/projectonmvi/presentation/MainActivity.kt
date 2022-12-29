@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         vm = ViewModelProvider(this, MainViewModelFactory(this))[MainViewModel::class.java]
 
-        vm.resultLive.observe(this) { text ->
-            dataTextView.text = text
+        vm.stateLive.observe(this) { state ->
+            dataTextView.text = "${state.result} ${state.firstName} ${state.lastName}"
         }
 
         sendButton.setOnClickListener {
