@@ -8,7 +8,6 @@ class SaveUserNameUseCase(private val userRepository: UserRepository) {
             return true
         }
 
-        val result: Boolean = userRepository.saveName(saveParam = param)
-        return result
+        return userRepository.saveName(saveParam = param)
     }
 }

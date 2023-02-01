@@ -5,5 +5,4 @@ interface UserRepository {
     fun saveName(saveParam: SaveUserNameParam): Boolean
 
     fun getName(): UserName
-
 }

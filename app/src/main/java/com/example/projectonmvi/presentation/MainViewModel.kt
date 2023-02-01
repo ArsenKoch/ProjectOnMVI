@@ -19,7 +19,7 @@ class MainViewModel(
 
     init {
         Log.e("AAA", "VM created")
-        stateLiveMutable.value = MainState(false,"","")
+        stateLiveMutable.value = MainState(false, "", "")
     }
 
     override fun onCleared() {

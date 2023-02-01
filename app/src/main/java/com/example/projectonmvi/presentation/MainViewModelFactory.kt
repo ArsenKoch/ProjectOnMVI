@@ -8,6 +8,7 @@ import com.example.projectonmvi.data.UserRepositoryImpl
 import com.example.projectonmvi.domain.GetUserNameUseCase
 import com.example.projectonmvi.domain.SaveUserNameUseCase
 
+@Suppress("UNCHECKED_CAST")
 class MainViewModelFactory(context: Context) : ViewModelProvider.Factory {
 
     private val userRepository by lazy(LazyThreadSafetyMode.NONE) {
