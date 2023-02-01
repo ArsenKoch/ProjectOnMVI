@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProjectOnMVI</string>
+    <string name="no_data">No Data</string>
+    <string name="get_data">get data</string>
+    <string name="put_data">Put Data</string>
+    <string name="save_data">save data</string>
 </resources>

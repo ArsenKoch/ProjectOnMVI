@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="no data"
+        android:text="@string/no_data"
         android:textSize="18sp" />
 
     <Button
@@ -19,21 +19,20 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:text="get data" />
+        android:text="@string/get_data" />
 
     <EditText
         android:id="@+id/dataEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
-        android:hint="put data" />
+        android:hint="@string/put_data"/>
 
     <Button
         android:id="@+id/sendButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:text="save data" />
-
+        android:text="@string/save_data" />
 
 </LinearLayout>
